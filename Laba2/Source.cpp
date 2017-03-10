@@ -11,6 +11,7 @@ void kakoy(vector <int> a);
 void per(vector <int> a);
 void plo(vector <int> a);
 void inf();
+void proverka(float a);
 
 int main() {
 	setlocale(LC_ALL, "rus");
@@ -90,19 +91,31 @@ int main() {
 }
 
 vector <int>  input(vector <int> a) {
-	float x11, y11, x12, y12, x21, y21, x22, y22, x31, y31, x32, y32;
+	float x11 = 0, y11 = 0, x12 = 0, y12 = 0, x21 = 0, y21 = 0, x22 = 0, y22 = 0, x31 = 0, y31 = 0, x32 = 0, y32 = 0;
 	cout << "Введите координаты точек первого отрезка: \nКоординаты начала: ";
-	cin >> x11 >> y11;
+	//cin >> x11 >> y11;
+	proverka(x11);
+	proverka(y11);
 	cout << "Координаты конца: ";
-	cin >> x12 >> y12;
+	proverka(x12);
+	proverka(y12);
+	//cin >> x12 >> y12;
 	cout << "Введите координаты точек второго отрезка: \nКоординаты начала: ";
-	cin >> x21 >> y21;
+	//cin >> x21 >> y21;
+	proverka(x21);
+	proverka(y21);
 	cout << "Координаты конца: ";
-	cin >> x22 >> y22;
+	//cin >> x22 >> y22;
+	proverka(x22);
+	proverka(y22);
 	cout << "Введите координаты точек третьего отрезка: \nКоординаты начала: ";
-	cin >> x31 >> y31;
+	//cin >> x31 >> y31;
+	proverka(x31);
+	proverka(y31);
 	cout << "Координаты конца: ";
-	cin >> x32 >> y32;
+	//cin >> x32 >> y32;
+	proverka(x32);
+	proverka(y32);
 	a.push_back(x11);
 	a.push_back(y11);
 	a.push_back(x12);
@@ -118,19 +131,41 @@ vector <int>  input(vector <int> a) {
 	return a;
 }
 vector <int>  exchange(vector <int> a) {
-	float x11, y11, x12, y12, x21, y21, x22, y22, x31, y31, x32, y32;
+	float x11 = 0, y11 = 0, x12 = 0, y12 = 0, x21 = 0, y21 = 0, x22 = 0, y22 = 0, x31 = 0, y31 = 0, x32 = 0, y32 = 0;
 	cout << "Введите координаты точек первого отрезка: \nКоординаты начала: ";
-	cin >> x11 >> y11;
+	//cin >> x11 >> y11;
+	proverka(x11);
+	proverka(y11);
 	cout << "Координаты конца: ";
-	cin >> x12 >> y12;
+	proverka(x12);
+	proverka(y12);
+	//cin >> x12 >> y12;
 	cout << "Введите координаты точек второго отрезка: \nКоординаты начала: ";
-	cin >> x21 >> y21;
+	//cin >> x21 >> y21;
+	proverka(x21);
+	proverka(y21);
 	cout << "Координаты конца: ";
-	cin >> x22 >> y22;
+	//cin >> x22 >> y22;
+	proverka(x22);
+	proverka(y22);
 	cout << "Введите координаты точек третьего отрезка: \nКоординаты начала: ";
-	cin >> x31 >> y31;
+	//cin >> x31 >> y31;
+	proverka(x31);
+	proverka(y31);
 	cout << "Координаты конца: ";
-	cin >> x32 >> y32;
+	//cin >> x32 >> y32;
+	proverka(x32);
+	proverka(y32);
+	/*cout << "Координаты конца: ";
+	//cin >> x12 >> y12;
+	cout << "Введите координаты точек второго отрезка: \nКоординаты начала: ";
+	//cin >> x21 >> y21;
+	cout << "Координаты конца: ";
+	//cin >> x22 >> y22;
+	cout << "Введите координаты точек третьего отрезка: \nКоординаты начала: ";
+	//cin >> x31 >> y31;
+	cout << "Координаты конца: ";
+	//cin >> x32 >> y32;*/
 	a[0] = x11;
 	a[1] = y11;
 	a[2] = x12;
@@ -197,4 +232,18 @@ void plo(vector <int> a) {
 	p = x + y + z;
 	s = sqrt(p * (p - x) * (p - y) * (p - z));
 	cout << "\nПлощадь треугольника: " << s << endl;
+}
+void proverka(float a)
+{
+	while (true)
+	{
+		cin >> a;
+		if (!cin || a < 0)
+		{
+			cout << "Неверно ввели, повторите ввод \n";
+			cin.clear();
+			while (cin.get() != '\n');
+		}
+		else break;
+	}
 }
