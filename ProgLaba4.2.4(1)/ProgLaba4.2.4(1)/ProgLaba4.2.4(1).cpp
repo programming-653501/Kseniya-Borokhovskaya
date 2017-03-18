@@ -27,7 +27,6 @@ void ReadStringFile(char* filename) {
 		for (int i = countspace; i < strlen(str); i++) {
 			if (str[i] != '\n') {
 				countchars++;
-				cout << str[i] << i << endl;
 			}
 		}
 		int addspace = (80 - countchars) / 2 - countspace;
@@ -47,40 +46,17 @@ void ReadStringFile(char* filename) {
 				newstr[i] = str[i + addspace];
 			}
 		}
-		cout << newstr;
 		fputs(newstr, out);
 		delete[] newstr;
 	} 
 	fclose(in);
 	fclose(out);
 	delete[] str;
-	
-	//}
-	//else printf("Can't open the file");
+
 }
 int main()
 {
-	/*string s;
-	ifstream fin("input.txt");
-	getline(fin, s);
-	fin.close();
-	cout << s;
-	system("PAUSE");
-    return 0;*/
-	/*char *str;
-	str = new char[81];
-	//string str;
-	FILE *in;
-	fopen_s(&in, "input.txt", "r");
-	//if ((fopen_s(&in,filename, "r+")) != NULL) {
-	//if (feof(in)) return;
-	fgets(str, 80, in);
-	cout << str;
-	system("PAUSE");
-	return 0;
-	setlocale(LC_ALL, "rus");*/
-	//FILE *myfile;
-	//fopen_s(&myfile,"c:\\input.txt", "r+");
+
 	ReadStringFile("input.txt");
 	system("PAUSE");
 	return 0;
