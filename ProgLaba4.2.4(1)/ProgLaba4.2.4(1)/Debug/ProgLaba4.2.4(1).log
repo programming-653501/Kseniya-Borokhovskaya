@@ -1,0 +1,12 @@
+﻿  ProgLaba4.2.4(1).cpp
+c:\users\бороховская ксения\documents\visual studio 2015\projects\proglaba4.2.4(1)\proglaba4.2.4(1)\proglaba4.2.4(1).cpp(23): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\бороховская ксения\documents\visual studio 2015\projects\proglaba4.2.4(1)\proglaba4.2.4(1)\proglaba4.2.4(1).cpp(27): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\бороховская ксения\documents\visual studio 2015\projects\proglaba4.2.4(1)\proglaba4.2.4(1)\proglaba4.2.4(1).cpp(46): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\бороховская ксения\documents\visual studio 2015\projects\proglaba4.2.4(1)\proglaba4.2.4(1)\proglaba4.2.4(1).cpp(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note:  см. объявление "strcpy"
+c:\users\бороховская ксения\documents\visual studio 2015\projects\proglaba4.2.4(1)\proglaba4.2.4(1)\proglaba4.2.4(1).cpp(39): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note:  см. объявление "strcat"
+c:\users\бороховская ксения\documents\visual studio 2015\projects\proglaba4.2.4(1)\proglaba4.2.4(1)\proglaba4.2.4(1).cpp(42): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note:  см. объявление "strcat"
+  ProgLaba4.2.4(1).vcxproj -> C:\Users\Бороховская Ксения\Documents\Visual Studio 2015\Projects\ProgLaba4.2.4(1)\Debug\ProgLaba4.2.4(1).exe
+  ProgLaba4.2.4(1).vcxproj -> C:\Users\Бороховская Ксения\Documents\Visual Studio 2015\Projects\ProgLaba4.2.4(1)\Debug\ProgLaba4.2.4(1).pdb (Full PDB)
