@@ -1,0 +1,3 @@
+﻿  Tree.cpp
+c:\users\бороховская ксения\documents\visual studio 2015\projects\prlaba6.0\prlaba6\tree.cpp(42): warning C4715: Tree::Add: значение возвращается не при всех путях выполнения
+  PrLaba6.vcxproj -> C:\Users\Бороховская Ксения\Documents\Visual Studio 2015\Projects\PrLaba6.0\Debug\PrLaba6.lib
