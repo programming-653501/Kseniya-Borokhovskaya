@@ -3,6 +3,7 @@
 
 namespace Laba3
 {
+    // Random KEK
     class Program
     {
         static void rand(out int[,] a, int n)
@@ -15,6 +16,7 @@ namespace Laba3
                 {
                     a[i, j] = r.Next(-100, 100);
                 }
+            // Привет, Ксюша!
             }
         }
         static void output(int[,] a, int n)
@@ -24,6 +26,7 @@ namespace Laba3
                 for (int j = 0; j < n; j++)
                 {
                     Console.Write($"{a[i, j]}\t");
+                    // Тупой комментарий
                 }
                 Console.WriteLine("\n");
             }
@@ -50,18 +53,22 @@ namespace Laba3
             {
                 for (int i = 0; i < n - 1; i++)
                 {
+                    // More random KEKS
                     for (int j = 0; j < n - i - 1; j++)
                     {
                         if (a[j, k] > a[j + 1, k])
                         {
                             int temp = a[j, k];
+                            // And more KEK
                             a[j, k] = a[j + 1, k];
+                            // And once more: KEKE
                             a[j + 1, k] = temp;
                         }
                     }
                 }
             }
         }
+        // Start doing HERE. Ya Shary
         static void Main(string[] args)
         {
             Console.Write("Введи размерность матрицы: ");
@@ -109,6 +116,7 @@ namespace Laba3
                     itemcounter = 0;
                 }
             }
+            // Демонстрация возможностей админа группы (:
             Console.Write($"Количество похожих пар столбцов: {rowcounter} ");
             Console.ReadKey();
         }
