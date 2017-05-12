@@ -1,0 +1,2 @@
+Lenovo Yoga2	1200	true	good laptop	1 year	China
+Apple 2	1200	false	the best one	2 years	USA

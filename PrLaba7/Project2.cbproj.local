@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.436,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Project2.cbproj=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\Project2.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.140,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.299,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\ListOfGoods.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.140,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.299,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.h=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\ListOfGoods.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.350,=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.009,=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.507,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ProgLaba7.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\ProgLaba7.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.182,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Project2PCH1.h=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.099,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\File1.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ProgLaba7.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.025,=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

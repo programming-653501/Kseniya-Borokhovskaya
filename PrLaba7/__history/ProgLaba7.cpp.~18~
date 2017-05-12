@@ -1,0 +1,317 @@
+#pragma hdrstop
+#pragma argsused
+
+#ifdef _WIN32
+#include <tchar.h>
+#else
+  typedef char _TCHAR;
+#endif
+
+#include <stdio.h>
+
+
+#include "ListOfGoods.h"
+#include <locale>
+#include <iostream.h>
+#include <conio.h>
+#include <vector>
+
+
+using namespace std;
+
+struct Customer
+{
+	char*  name;
+	int contacts;
+	vector <Good> listOfGoods;
+};
+
+
+void LoadDataAboutProducts(int &count, ListOfGoods &goods, char* nameOfFile);
+void LoadData(int &amount, ListOfGoods &ListOfLaptops, ListOfGoods &ListOfPC, ListOfGoods &ListOfTablets,
+	ListOfGoods &ListOfMonitors, ListOfGoods &ListOfKeyboards, ListOfGoods &ListOfProcessors);
+void ChoiceOfSection(ListOfGoods &firstListOfGoods, ListOfGoods &secondListOfGoods,
+	ListOfGoods &thirdListOfGoods, vector <Good> &basket);
+void ChoiceOfSubsection(ListOfGoods &listOfGoods, vector <Good> &basket);
+void interectionWithBasket(vector <Customer> &customers, vector <Good> &basket, int &totalRevenue);
+void showCustomers(vector <Customer> &customers);
+void saveCustomersToFile(vector <Customer> &customers);
+void loadCustomersFromFile(vector <Customer> &customers);
+
+
+int main()
+{
+	vector <Customer> customers;
+	loadCustomersFromFile(customers);
+	vector <Good> basket;
+	int amount = 0;
+	ListOfGoods ListOfLaptops;
+	ListOfGoods ListOfPC;
+	ListOfGoods ListOfTablets;
+	ListOfGoods ListOfMonitors;
+	ListOfGoods ListOfKeyboards;
+	ListOfGoods ListOfProcessors;
+	LoadData(amount, ListOfLaptops, ListOfPC, ListOfTablets, ListOfMonitors, ListOfKeyboards, ListOfProcessors);
+
+	int totalRevenue = 0;
+
+	bool endOfInterection = false;
+	char firstChoice;
+
+	while (!endOfInterection)
+	{
+		system("cls");
+		cout << "Welcome to cShop.by!\nIn our Internet-shop you can choose computers and accessuaries you want\n";
+		cout << "Enter 1 if you want to choose computer\n";
+		cout << "Enter 2 if you want to choose accessuaries\n";
+		cout << "Enter 3 if you want to go to Basket\n";
+		cout << "Enter 4 if you want to watch our customers\n";
+		cout << "Enter 5 if you want to learn total revenue\n";
+		cout << "Enter 6 if you want to finish\n";
+
+		firstChoice = _getch();
+
+
+		switch (firstChoice)
+		{
+		case '1':
+			system("cls");
+			cout << "You are in computer section, now choose subsection or go back\n";
+			cout << "Enter 1 if you want to choose laptop\n";
+			cout << "Enter 2 if you want to choose PC\n";
+			cout << "Enter 3 if you want to choose tablet\n";
+			cout << "Enter 4 if you want to return to main page\n";
+			ChoiceOfSection(ListOfLaptops, ListOfPC, ListOfTablets, basket);
+			break;
+		case '2':
+			system("cls");
+			cout << "You are in accessuaries section, now choose subsection or go back\n";
+			cout << "Enter 1 if you want to choose monitor\n";
+			cout << "Enter 2 if you want to choose keyboard\n";
+			cout << "Enter 3 if you want to choose processor\n";
+			cout << "Enter 4 if you want to return to main page\n";
+			ChoiceOfSection(ListOfMonitors, ListOfKeyboards, ListOfProcessors, basket);
+			break;
+
+		case '3':
+			interectionWithBasket(customers, basket, totalRevenue);
+			break;
+		case '4':
+			showCustomers(customers);
+			break;
+		case '5':
+			system("cls");
+			cout << "Total revenue: " << totalRevenue << endl;
+			cout << "Press any key to continue...";
+			_getch();
+			break;
+		case '6':
+			saveCustomersToFile(customers);
+			endOfInterection = true;
+		}
+	}
+	return 0;
+}
+
+void LoadDataAboutProducts(int &count, ListOfGoods &goods, char* nameOfFile) {
+	FILE* file = fopen(nameOfFile, "r");
+	while (!feof(file)) {
+		char *str = new char[256];
+		char *nameOfGood = new char[40];
+		char *price = new char[10];
+		char *isInStock = new char[5];
+		char *description = new char[50];
+		char *guarantee = new char[15];
+		char *country = new char[20];
+		int j;
+		fgets(str, 256, file);
+		const int length = strlen(str);
+        for (j = 0; str[j] != '\t'; j++) {
+			nameOfGood[j] = str[j];
+		}
+		int k;
+		for (j = j + 1, k = 0; isdigit(str[j]); j++, k++) {
+			price[k] = str[j];
+		}
+		for (j = j + 1, k = 0; str[j] != '\t'; j++, k++) {
+			isInStock[k] = str[j];
+		}
+		for (j = j + 1, k = 0; str[j] != '\t'; j++, k++) {
+			description[k] = str[j];
+		}
+		for (j = j + 1, k = 0; str[j] != '\t'; j++, k++) {
+			guarantee[k] = str[j];
+		}
+		for (j = j + 1, k = 0; str[j] != '\n'; j++, k++) {
+			if(j > length) {
+				break;
+			}
+			else
+				country[k] = str[j];
+		}
+
+		int money = atoi(price);
+		if (nameOfGood[0] == '\0') {
+			for (j = 0; str[j] != '\t'; j++) {
+				nameOfGood[j] = str[j];
+			}
+		}
+		goods.Add(nameOfGood, money, bool(isInStock), description, guarantee, country);
+		count++;
+		delete[] str, nameOfGood, price, isInStock, description, guarantee, country;
+	}
+	fclose(file);
+}
+
+void LoadData(int &amount, ListOfGoods &ListOfLaptops, ListOfGoods &ListOfPC, ListOfGoods &ListOfTablets,
+	ListOfGoods &ListOfMonitors, ListOfGoods &ListOfKeyboards, ListOfGoods &ListOfProcessors)
+{
+	char* fileOfLaptops = "C:\\Users\\Бороховская Ксения\\Documents\\Embarcadero\\Studio\\Projects\\PrLaba7\\laptops.txt";
+	char* fileOfPC = "C:\\Users\\Бороховская Ксения\\Documents\\Embarcadero\\Studio\\Projects\\PrLaba7\\PC.txt";
+	char* fileOfTablets = "C:\\Users\\Бороховская Ксения\\Documents\\Embarcadero\\Studio\\Projects\\PrLaba7\\tablets.txt";
+	char* fileOfMonitors = "C:\\Users\\Бороховская Ксения\\Documents\\Embarcadero\\Studio\\Projects\\PrLaba7\\monitors.txt";
+	char* fileOfKeyboards = "C:\\Users\\Бороховская Ксения\\Documents\\Embarcadero\\Studio\\Projects\\PrLaba7\\keyboards.txt";
+	char* fileOfProcessors = "C:\\Users\\Бороховская Ксения\\Documents\\Embarcadero\\Studio\\Projects\\PrLaba7\\processors.txt";
+	LoadDataAboutProducts(amount, ListOfLaptops, fileOfLaptops);
+	LoadDataAboutProducts(amount, ListOfPC, fileOfPC);
+	LoadDataAboutProducts(amount, ListOfTablets, fileOfTablets);
+	LoadDataAboutProducts(amount, ListOfMonitors, fileOfMonitors);
+	LoadDataAboutProducts(amount, ListOfKeyboards, fileOfKeyboards);
+	LoadDataAboutProducts(amount, ListOfProcessors, fileOfProcessors);
+}
+
+void ChoiceOfSubsection(ListOfGoods &listOfGoods, vector <Good> &basket)
+{
+	system("cls");
+	listOfGoods.Show();
+	cout << "Enter nubber of item you want to add to Basket or enter 0 if you you want go back\n";
+
+	int choiceOfDevice = _getch();
+	if (choiceOfDevice == '0') return;
+	Good* chosenGood = listOfGoods.Find(choiceOfDevice);
+	basket.push_back(*chosenGood);
+	cout << "The item has been successfully added!\nPress any key to continue...";
+	_getch();
+}
+
+void ChoiceOfSection(ListOfGoods &firstListOfGoods, ListOfGoods &secondListOfGoods,
+	ListOfGoods &thirdListOfGoods, vector <Good> &basket)
+{
+	bool endOfInterection = false;
+	while (!endOfInterection) {
+		char choiceOfSubsection = _getch();
+		switch (choiceOfSubsection)
+		{
+		case '1':
+			ChoiceOfSubsection(firstListOfGoods, basket);
+			endOfInterection = true;
+			break;
+		case '2':
+			ChoiceOfSubsection(secondListOfGoods, basket);
+			endOfInterection = true;
+			break;
+		case '3':
+			ChoiceOfSubsection(thirdListOfGoods, basket);
+			endOfInterection = true;
+			break;
+		case '4':
+			endOfInterection = true;
+			break;
+		default:
+			cout << "Try again";
+		}
+	}
+}
+
+void deleteGoodFromBasket(vector<Good> &basket, char* nameOfGood) {
+	bool changed = false;
+	for (int i = 0; i < basket.size(); i++) {
+		if (basket[i].nameOfGood == nameOfGood) {
+			basket.erase(basket.begin() + i);
+			changed = true;
+			break;
+		}
+	}
+	if (!changed) cout << "Have not found item in basket\n";
+	else cout << "Deleted\n";
+	cout << "Press any key to continue...";
+	_getch();
+}
+void interectionWithBasket(vector <Customer> &customers, vector <Good> &basket, int &totalRevenue)
+{
+	system("cls");
+	cout << "Items in your basket:\n";
+	for (int i = 0; i < basket.size(); i++) {
+		cout << basket[i].nameOfGood << "\t" << basket[i].price << "\t" << basket[i].guarantee << "\t" << basket[i].country << "\n";
+	}
+	cout << "Enter 1 if you want to buy\n";
+	cout << "Enter 2 if you want to delete some\n";
+	cout << "Enter 3 if you want to return to main page\n";
+	bool endOfInterection = false;
+	Customer castomer;
+	while (!endOfInterection) {
+		char choiceOfSubsection = _getch();
+		char nameOfGoodToDelete;
+		switch (choiceOfSubsection)
+		{
+		case '1':
+			cout << "Enter your name: ";
+			gets_s(castomer.name, 100);
+			cout << "Enter your contacts: ";
+			cin >> castomer.contacts;
+			for (int i = 0; i < basket.size(); i++) {
+				castomer.listOfGoods.push_back(basket[i]);
+				totalRevenue += basket[i].price;
+			}
+			basket.clear();
+			break;
+		case '2':
+			cout << "Enter name of good you want do delete\n";
+			nameOfGoodToDelete = _getch();
+			deleteGoodFromBasket(basket, &nameOfGoodToDelete);
+			break;
+		case '3':
+			endOfInterection = true;
+			break;
+		default:
+			cout << "Try again";
+		}
+	}
+}
+
+void showCustomers(vector <Customer> &customers)
+{
+	if(customers.size() == 0)  cout << "No customers\n";
+	for (int i = 0; i < customers.size(); i++) {
+		cout << customers[i].name << "\t" << customers[i].contacts << "\nCustomer's purchases:\n";
+		for (int j = 0; i < customers[i].listOfGoods.size(); j++) {
+			customers[i].listOfGoods[j].Show();
+		}
+		cout << "---------------------------------------------------------------------------------------\n";
+	}
+	cout << "Press any key to continue...";
+	_getch();
+}
+
+void saveCustomersToFile(vector <Customer> &customers) {
+	FILE *file = fopen("C:\\Users\\Бороховская Ксения\\Documents\\Visual Studio 2015\\Projects\\PrLaba7\\customers.txt", "wb");
+	for (int i = 0; i < customers.size(); i++) {
+		fwrite(&customers[i], sizeof(customers), 1, file);
+	}
+	fclose(file);
+}
+
+void loadCustomersFromFile(vector <Customer> &customers)
+{
+	Customer customer;
+	FILE* file = fopen("customers.txt", "r");
+	if (file)
+	{
+		while (!feof(file))
+		{
+			fread(&customer, sizeof(customer), 1, file);
+			customers.push_back(customer);
+		}
+		fclose(file);
+	}
+}

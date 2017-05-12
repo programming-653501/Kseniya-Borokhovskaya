@@ -1,0 +1,2 @@
+Lenovo Yoga2	1200	true	good tablet	1 year	China
+Apple tablet	1200	false	the best one	2 years	USA

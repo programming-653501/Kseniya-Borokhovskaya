@@ -1,0 +1,2 @@
+Lenovo	2200	true	good PC	1 year	China
+Apple	1200	true	the best one	2 years	USA

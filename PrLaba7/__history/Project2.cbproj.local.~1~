@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2017.05.12 23:57:04.009,=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>2017.05.12 23:57:04.025,=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2017.05.12 23:58:26.350,=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2017.05.13 00:02:08.099,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ProgLaba7.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2017.05.13 00:02:20.140,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2017.05.13 00:02:20.140,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.h=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2017.05.13 00:02:52.299,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\ListOfGoods.h=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.h</Transaction>
+    <Transaction>2017.05.13 00:02:52.299,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\ListOfGoods.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ListOfGoods.cpp</Transaction>
+    <Transaction>2017.05.13 00:02:57.507,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\ProgLaba7.cpp=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\ProgLaba7.cpp</Transaction>
+    <Transaction>2017.05.13 00:03:00.182,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\Project2PCH1.h=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>2017.05.13 00:03:03.436,C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\PrLaba7\Project2.cbproj=C:\Users\Бороховская Ксения\Documents\Embarcadero\Studio\Projects\Project2.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
